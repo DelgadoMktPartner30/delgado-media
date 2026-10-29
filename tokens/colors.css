@@ -1,0 +1,46 @@
+:root{
+/* Brand — sampled from Delgado avatars */
+--dg-yellow:#FFEC00;
+--dg-black:#000000;
+--dg-yellow-600:#E6D400;
+--dg-yellow-200:#FFF7A3;
+--dg-yellow-50:#FFFCE0;
+/* Neutrals (warm, slightly yellow-tinted) */
+--dg-white:#FFFFFF;
+--dg-paper:#F6F5F0;
+--dg-paper-2:#EDEBE3;
+--dg-ink-50:#E2E0D8;
+--dg-ink-100:#CFCDC4;
+--dg-ink-300:#9C9A92;
+--dg-ink-500:#6B6A64;
+--dg-ink-700:#3A3936;
+--dg-ink-800:#1F1F1D;
+--dg-ink-900:#121211;
+/* Semantic (functional only, never decorative) */
+--dg-success:#1E7A46;
+--dg-success-bg:#E4F2E9;
+--dg-error:#C2261B;
+--dg-error-bg:#FBE7E5;
+--dg-info:#1F4FBF;
+--dg-info-bg:#E6ECFA;
+
+/* Semantic aliases — light surface */
+--surface-page:var(--dg-paper);
+--surface-card:var(--dg-white);
+--surface-sunken:var(--dg-paper-2);
+--surface-inverse:var(--dg-black);
+--surface-accent:var(--dg-yellow);
+--text-strong:var(--dg-black);
+--text-body:var(--dg-ink-800);
+--text-muted:var(--dg-ink-500);
+--text-inverse:var(--dg-white);
+--text-on-accent:var(--dg-black);
+--text-accent-on-dark:var(--dg-yellow);
+--border-subtle:var(--dg-ink-50);
+--border-default:var(--dg-ink-100);
+--border-strong:var(--dg-black);
+--border-inverse:var(--dg-ink-700);
+--focus-ring:var(--dg-black);
+--focus-ring-on-dark:var(--dg-yellow);
+--selection-bg:var(--dg-yellow);
+}

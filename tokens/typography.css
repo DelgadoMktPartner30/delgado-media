@@ -1,0 +1,26 @@
+:root{
+--font-sans:'Geist',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+--font-mono:'Geist Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+--font-display:var(--font-sans);
+
+--fw-light:300;/* @kind font */--fw-regular:400;/* @kind font */--fw-medium:500;/* @kind font */--fw-semibold:600;/* @kind font */--fw-bold:700;/* @kind font */
+
+/* Fluid display scale (mobile → desktop) */
+--fs-display-xl:clamp(3rem,1.6rem + 6vw,7.5rem);/* @kind other */
+--fs-display-l:clamp(2.5rem,1.5rem + 4.2vw,5.5rem);/* @kind other */
+--fs-display-m:clamp(2rem,1.3rem + 2.8vw,4rem);/* @kind other */
+--fs-h1:clamp(1.75rem,1.3rem + 1.8vw,3rem);/* @kind other */
+--fs-h2:clamp(1.5rem,1.2rem + 1.2vw,2.25rem);/* @kind other */
+--fs-h3:clamp(1.25rem,1.1rem + .6vw,1.625rem);/* @kind other */
+--fs-h4:1.25rem;/* @kind font */
+--fs-lead:clamp(1.125rem,1rem + .5vw,1.375rem);/* @kind other */
+--fs-body:1.0625rem;/* @kind font */
+--fs-small:.9375rem;/* @kind font */
+--fs-caption:.8125rem;/* @kind font */
+--fs-label:.75rem;/* @kind font */
+
+--lh-tight:1.0;/* @kind font */--lh-snug:1.15;/* @kind font */--lh-heading:1.2;/* @kind font */--lh-body:1.6;/* @kind font */--lh-relaxed:1.7;/* @kind font */
+--ls-display:-.045em;/* @kind font */--ls-heading:-.025em;/* @kind font */--ls-body:-.005em;/* @kind font */--ls-label:.08em;/* @kind font */
+
+--measure:64ch;/* @kind spacing */
+}
