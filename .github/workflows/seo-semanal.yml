@@ -1,0 +1,35 @@
+# Publica los cambios del SEO semanal (D-121). La sesión de Claude en la nube deja sus cambios en
+# la rama seo-semanal; este flujo los une a main (GitHub Pages publica main) y pide la publicación.
+name: Publicar SEO semanal
+on:
+  push:
+    branches: [seo-semanal]
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Unir seo-semanal a main
+        run: |
+          git config user.name "SEO nube"
+          git config user.email "seo-nube@delgado.media"
+          git fetch -q origin seo-semanal
+          n=$(git diff --name-only HEAD origin/seo-semanal | wc -l)
+          echo "$n archivos cambian"
+          [ "$n" -le 10 ] || { echo "ABORTADO: demasiados archivos ($n)"; exit 1; }
+          git merge --no-edit origin/seo-semanal
+          [ "$(cat CNAME)" = "www.delgado.media" ] || { echo "ABORTADO: CNAME alterado"; exit 1; }
+          git push -q origin HEAD:main
+      - name: Pedir la publicación a GitHub Pages
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null && echo "Publicación pedida."
+        env:
+          GH_TOKEN: ${{ github.token }}
