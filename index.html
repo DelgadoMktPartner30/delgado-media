@@ -188,6 +188,29 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 .aside img{display:block;width:100%;max-width:220px;height:auto;border-radius:4px;margin-top:8px}
 .signoff{margin:clamp(16px,3vw,40px) 0 0;padding-top:clamp(40px,5vw,72px);border-top:1px solid var(--ink-700);font-size:clamp(2rem,1.3rem + 2.6vw,4rem);font-weight:500;line-height:1.04;letter-spacing:-.045em}
 
+/* Tramos del camino (dibujos animados) */
+.tramo{width:100%;overflow:hidden;--road:#ECE6DE;--edge:#DDD5CB}
+.tramo svg{display:block;width:100%;height:clamp(190px,22vw,330px)}
+.tramo .via use{fill:none;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.3,.6,.2,1)}
+.tramo.on .via use{stroke-dashoffset:0}
+.tramo .v-sombra{stroke:#000;stroke-opacity:.07;stroke-width:28}
+.tramo .v-borde{stroke:var(--edge);stroke-width:24}
+.tramo .v-firme{stroke:var(--road);stroke-width:21}
+.tramo .via.fina .v-sombra{stroke-width:16}.tramo .via.fina .v-borde{stroke-width:13}.tramo .via.fina .v-firme{stroke-width:11}
+.tramo .pista{fill:none;stroke:#B5B2AA;stroke-width:1.5;stroke-linecap:round;stroke-dasharray:2 7;opacity:.9}
+.tramo .traza{opacity:0;transition:opacity 1.2s .6s}
+.tramo.on .traza{opacity:.9}
+.tramo text{stroke:none}
+.tramo .tx{font:400 13px var(--sans);fill:var(--ink-500)}
+.tramo .tx-s{font:500 12px var(--sans);fill:var(--ink-700)}
+.tramo .tx-m{font:500 13px var(--mono);fill:var(--ink-800)}
+#metodo .tramo,#experiencia .tramo{--road:#F1EDE8;--edge:#E3DDD5}
+#diferencial .tramo,#quien .tramo{--road:#E2DBD2;--edge:#D3CABF}
+#contacto .tramo{--road:#242422;--edge:#181817}
+#contacto .tramo .v-sombra{stroke-opacity:0}
+.sec.con-tramo{padding-top:clamp(8px,1.5vw,24px)}
+.contact.con-tramo > .wrap{padding-top:clamp(16px,3vw,40px)!important}
+
 /* Pie */
 .foot{background:#000;color:var(--ink-300);border-top:1px solid var(--ink-800)}
 .foot .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;padding-top:32px;padding-bottom:104px;font-size:14px}
@@ -207,6 +230,10 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<filter id="suave" x="-5%" y="-50%" width="110%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+<radialGradient id="vidrio" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#FFF7A3" stop-opacity=".75"/><stop offset=".6" stop-color="#FFEC00" stop-opacity=".28"/><stop offset="1" stop-color="#FFEC00" stop-opacity=".12"/></radialGradient>
+</defs></svg>
 
 <header class="top">
   <div class="wrap">
@@ -261,7 +288,30 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="problema" class="sec">
+<section id="problema" class="sec con-tramo">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-problema" d="M-40 178 C300 178 430 150 610 150 C780 150 830 122 1000 122 C1160 122 1260 100 1480 100" pathLength="1"/>
+<linearGradient id="g-problema" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-problema" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-problema)"/></mask></defs>
+<g mask="url(#m-problema)" class="via"><use href="#r-problema" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-problema" class="v-borde"/><use href="#r-problema" class="v-firme" transform="translate(0 -1.6)"/></g>
+<path class="pista" d="M650 148 C620 120 580 98 512 86"/><path class="pista" d="M770 140 C810 112 860 92 920 66"/><path class="pista" d="M560 156 C520 150 470 138 426 110"/>
+<ellipse cx="714" cy="150" rx="16" ry="3" fill="#000" opacity=".08"/>
+<rect x="709" y="30" width="6" height="121" rx="2" fill="#8C8378"/>
+<g><animateTransform attributeName="transform" type="rotate" dur="5.5s" begin="0s" repeatCount="indefinite" values="0 712 47;-2.5 712 47;0 712 47;2 712 47;0 712 47"/><path d="M712 36 H632 L620 47 L632 58 H712 Z" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2" stroke-linejoin="round"/><text class="tx-s" x="666.0" y="51.5" text-anchor="middle">Publicidad</text></g>
+<g><animateTransform attributeName="transform" type="rotate" dur="5.5s" begin="-1.4s" repeatCount="indefinite" values="0 712 75;-2.5 712 75;0 712 75;2 712 75;0 712 75"/><path d="M712 64 H786 L798 75 L786 86 H712 Z" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2" stroke-linejoin="round"/><text class="tx-s" x="755.0" y="79.5" text-anchor="middle">Redes</text></g>
+<g><animateTransform attributeName="transform" type="rotate" dur="5.5s" begin="-2.6s" repeatCount="indefinite" values="0 712 103;-2.5 712 103;0 712 103;2 712 103;0 712 103"/><path d="M712 92 H660 L648 103 L660 114 H712 Z" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2" stroke-linejoin="round"/><text class="tx-s" x="680.0" y="107.5" text-anchor="middle">SEO</text></g>
+<g><animateTransform attributeName="transform" type="rotate" dur="5.5s" begin="-3.8s" repeatCount="indefinite" values="0 712 131;-2.5 712 131;0 712 131;2 712 131;0 712 131"/><path d="M712 120 H768 L780 131 L768 142 H712 Z" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2" stroke-linejoin="round"/><text class="tx-s" x="746.0" y="135.5" text-anchor="middle">Web</text></g>
+<g><animateMotion dur="4s" keyPoints="0.27;0.41" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-problema"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="4s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="4s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="4s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="4s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="7s" keyPoints="0.6;0.96" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-problema"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="7s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
   <div class="wrap stack">
     <span class="eyebrow">02 — El problema</span>
     <h2 class="h-quote" data-reveal style="max-width:20ch">«Hago marketing, invierto dinero, pero no sé qué me está dando resultados».</h2>
@@ -273,7 +323,37 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="metodo" class="sec" style="background:#fff">
+<section id="metodo" class="sec con-tramo" style="background:#fff">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-metodo" d="M-40 124 C260 124 380 164 620 164 C860 164 960 114 1180 114 C1300 114 1380 132 1480 132" pathLength="1"/>
+<linearGradient id="g-metodo" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-metodo" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-metodo)"/></mask></defs>
+<g mask="url(#m-metodo)" class="via"><use href="#r-metodo" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-metodo" class="v-borde"/><use href="#r-metodo" class="v-firme" transform="translate(0 -1.6)"/></g>
+<ellipse cx="862" cy="130" rx="62" ry="4" fill="#000" opacity=".08"/>
+<rect x="812" y="66" width="58" height="62" rx="2" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2"/>
+<rect x="870" y="88" width="44" height="40" rx="2" fill="#F4F1EC" stroke="#CFCDC4" stroke-width="1.2"/>
+<path d="M808 66 H874" stroke="#3A3936" stroke-width="3" stroke-linecap="round"/>
+<g fill="#E6DFD5"><rect x="822" y="76" width="10" height="9" rx="1"/><rect x="838" y="76" width="10" height="9" rx="1"/><rect x="854" y="76" width="10" height="9" rx="1"/><rect x="822" y="92" width="10" height="9" rx="1"/><rect x="854" y="92" width="10" height="9" rx="1"/><rect x="880" y="98" width="9" height="8" rx="1"/><rect x="895" y="98" width="9" height="8" rx="1"/></g>
+<rect x="836" y="104" width="14" height="24" rx="1" fill="#3A3936"/>
+<g><animateTransform attributeName="transform" type="translate" dur="7s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.25;.5;.75;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="0 0;22 -6;34 10;6 6;0 0"/>
+  <path d="M884 122 L914 152" stroke="#141413" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="856" cy="94" r="38" fill="url(#vidrio)" stroke="#141413" stroke-width="3.4"/>
+  <path d="M832 80 A28 28 0 0 1 852 66" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8"/>
+</g>
+<g class="chips"><g><rect x="960" y="56" width="54" height="8" rx="4" fill="#E6DFD5"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.2;.8;1" dur="7s" repeatCount="indefinite"/></g>
+<g><rect x="960" y="72" width="38" height="8" rx="4" fill="#FFEC00"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.2;.35;.85;1" dur="7s" repeatCount="indefinite"/></g>
+<g><rect x="960" y="88" width="46" height="8" rx="4" fill="#E6DFD5"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.35;.5;.9;1" dur="7s" repeatCount="indefinite"/></g></g>
+<g><animateMotion dur="4s" keyPoints="0.25;0.39" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-metodo"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="4s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="4s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="4s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="4s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6.5s" keyPoints="0.66;0.96" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-metodo"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6.5s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
   <div class="wrap stack">
     <span class="eyebrow">03 — Nuestro método</span>
     <h2 class="h-quote" data-reveal style="max-width:22ch">«Lo que comunica mi empresa no refleja todo lo que hay detrás de lo que hemos construido».</h2>
@@ -288,7 +368,27 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="implementacion" class="sec">
+<section id="implementacion" class="sec con-tramo">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-implementacion" d="M-40 166 C300 166 380 134 520 134 C620 134 640 154 720 154 C800 154 820 124 920 124 C1080 124 1200 144 1480 144" pathLength="1"/>
+<linearGradient id="g-implementacion" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-implementacion" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-implementacion)"/></mask></defs>
+<g mask="url(#m-implementacion)" class="via"><use href="#r-implementacion" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-implementacion" class="v-borde"/><use href="#r-implementacion" class="v-firme" transform="translate(0 -1.6)"/></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.4s" dur=".8s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="0.4s" dur=".8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/><ellipse cx="540" cy="120" rx="20" ry="3" fill="#000" opacity=".08"/><path d="M525 120 V94 Q525 80 540 80 Q555 80 555 94 V120 Z" fill="#FBFAF7" stroke="#CFCDC4" stroke-width="1.2"/><path d="M546 81.5 Q555 84 555 94 V120 H546 Z" fill="#ECE6DE"/><text class="tx-m" x="540" y="106" text-anchor="middle">01</text><text class="tx" x="540" y="70" text-anchor="middle">Preparamos</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.1s" dur=".8s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="1.1s" dur=".8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/><ellipse cx="735" cy="140" rx="20" ry="3" fill="#000" opacity=".08"/><path d="M720 140 V114 Q720 100 735 100 Q750 100 750 114 V140 Z" fill="#FBFAF7" stroke="#CFCDC4" stroke-width="1.2"/><path d="M741 101.5 Q750 104 750 114 V140 H741 Z" fill="#ECE6DE"/><text class="tx-m" x="735" y="126" text-anchor="middle">02</text><text class="tx" x="735" y="90" text-anchor="middle">Activamos</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.8s" dur=".8s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="1.8s" dur=".8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/><ellipse cx="935" cy="110" rx="20" ry="3" fill="#000" opacity=".08"/><path d="M920 110 V84 Q920 70 935 70 Q950 70 950 84 V110 Z" fill="#FBFAF7" stroke="#CFCDC4" stroke-width="1.2"/><path d="M941 71.5 Q950 74 950 84 V110 H941 Z" fill="#ECE6DE"/><text class="tx-m" x="935" y="96" text-anchor="middle">03</text><text class="tx" x="974" y="60" text-anchor="start">Consolidamos</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.3s" dur=".6s" fill="freeze"/><path d="M935 70 V36" stroke="#3A3936" stroke-width="2" stroke-linecap="round"/><path fill="#FFEC00" d="M935 36 C944 33 952 39 963 36 L963 50 C952 53 944 47 935 50 Z"><animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M935 36 C944 33 952 39 963 36 L963 50 C952 53 944 47 935 50 Z;M935 36 C944 39 952 33 963 37 L963 51 C952 47 944 53 935 50 Z;M935 36 C944 33 952 39 963 36 L963 50 C952 53 944 47 935 50 Z"/></path></g>
+<g><animateMotion dur="3.6s" keyPoints="0.18;0.31" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-implementacion"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="3.6s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="3.6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="3.6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="3.6s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6s" keyPoints="0.7;0.97" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-implementacion"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
   <div class="wrap stack">
     <span class="eyebrow">04 — Cómo lo ponemos en marcha</span>
     <h2 class="h-quote" data-reveal style="max-width:24ch">«He contratado agencias, he invertido dinero y sigo sin saber qué resultados concretos estoy consiguiendo».</h2>
@@ -305,7 +405,43 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="diferencial" class="sec" style="background:var(--piedra)">
+<section id="diferencial" class="sec con-tramo" style="background:var(--piedra)">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-diferencial" d="M-40 132 C240 132 380 164 560 164 C740 164 800 132 960 132 C1140 132 1240 152 1480 152" pathLength="1"/>
+<linearGradient id="g-diferencial" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-diferencial" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-diferencial)"/></mask></defs>
+<g mask="url(#m-diferencial)" class="via"><use href="#r-diferencial" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-diferencial" class="v-borde"/><use href="#r-diferencial" class="v-firme" transform="translate(0 -1.6)"/></g>
+<ellipse cx="560" cy="142" rx="46" ry="3" fill="#000" opacity=".08"/>
+<rect x="526" y="92" width="68" height="46" rx="4" fill="#2F2D2B"/>
+<rect x="531" y="97" width="58" height="36" rx="2" fill="#FBFAF7"/>
+<rect x="538" width="7" rx="1" fill="#CFCDC4" y="121" height="8"><animate attributeName="height" values="8;18;8" dur="2.4s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="121;111;121" dur="2.4s" begin="0s" repeatCount="indefinite"/></rect><rect x="549" width="7" rx="1" fill="#CFCDC4" y="115" height="14"><animate attributeName="height" values="14;8;14" dur="2.4s" begin="-0.6s" repeatCount="indefinite"/><animate attributeName="y" values="115;121;115" dur="2.4s" begin="-0.6s" repeatCount="indefinite"/></rect><rect x="560" width="7" rx="1" fill="#CFCDC4" y="119" height="10"><animate attributeName="height" values="10;22;10" dur="2.4s" begin="-1.2s" repeatCount="indefinite"/><animate attributeName="y" values="119;107;119" dur="2.4s" begin="-1.2s" repeatCount="indefinite"/></rect><rect x="571" width="7" rx="1" fill="#FFEC00" y="111" height="18"><animate attributeName="height" values="18;26;18" dur="2.4s" begin="-0.3s" repeatCount="indefinite"/><animate attributeName="y" values="111;103;111" dur="2.4s" begin="-0.3s" repeatCount="indefinite"/></rect>
+<path d="M514 138 H606 L600 145 H520 Z" fill="#3A3936"/>
+<text class="tx" x="560" y="80" text-anchor="middle">Digital</text>
+<ellipse cx="810" cy="140" rx="64" ry="3" fill="#000" opacity=".08"/>
+<path d="M756 102 V140 M756 122 H770 V140" stroke="#8C8378" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M864 102 V140 M864 122 H850 V140" stroke="#8C8378" stroke-width="3" fill="none" stroke-linecap="round"/>
+<rect x="772" y="110" width="76" height="6" rx="2" fill="#B9A58C"/>
+<path d="M782 116 V140 M838 116 V140" stroke="#9C8B74" stroke-width="3" stroke-linecap="round"/>
+<path d="M790 102 h11 v8 h-11 Z M819 102 h11 v8 h-11 Z" fill="#FFFFFF" stroke="#9C9A92" stroke-width="1"/>
+<path d="M795.5 100 q-3 -5 0 -9 q3 -4 0 -8" stroke="#B5B2AA" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;.9;0" dur="2.6s" begin="0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 2;0 -6" dur="2.6s" begin="0s" repeatCount="indefinite"/></path><path d="M824.5 100 q-3 -5 0 -9 q3 -4 0 -8" stroke="#B5B2AA" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;.9;0" dur="2.6s" begin="-1.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 2;0 -6" dur="2.6s" begin="-1.3s" repeatCount="indefinite"/></path>
+<text class="tx" x="810" y="80" text-anchor="middle">Reuniones</text>
+<ellipse cx="1028" cy="122" rx="30" ry="3" fill="#000" opacity=".08"/>
+<path d="M1006 92 L1048 76 V116 L1006 100 Z" fill="#FFFFFF" stroke="#3A3936" stroke-width="1.6" stroke-linejoin="round"/>
+<rect x="994" y="91" width="13" height="11" rx="2" fill="#3A3936"/><path d="M1000 102 L1004 116" stroke="#3A3936" stroke-width="3" stroke-linecap="round"/>
+<path d="M1048 76 V116" stroke="#FFEC00" stroke-width="4" stroke-linecap="round"/>
+<path d="M1058 86 q7 10 0 20" stroke="#3A3936" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0s" repeatCount="indefinite"/></path><path d="M1068 80 q11 16 0 32" stroke="#3A3936" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.35s" repeatCount="indefinite"/></path><path d="M1078 74 q15 22 0 44" stroke="#3A3936" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.7s" repeatCount="indefinite"/></path>
+<text class="tx" x="1030" y="62" text-anchor="middle">Comunicación</text>
+<g><animateMotion dur="4.5s" keyPoints="0.28;0.44" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-diferencial"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="4.5s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="4.5s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="4.5s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="4.5s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6s" keyPoints="0.7;0.97" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-diferencial"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
   <div class="wrap stack">
     <span class="eyebrow">05 — Nuestro diferencial</span>
     <h2 class="h-quote" data-reveal style="max-width:22ch">«Mi agencia solo me habla de anuncios, redes sociales y visitas a la web».</h2>
@@ -320,7 +456,67 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="como-trabajamos" class="sec">
+<section id="como-trabajamos" class="sec con-tramo">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-como-trabajamos" d="M-40 154 C300 154 420 134 720 134 C1000 134 1100 164 1480 164" pathLength="1"/>
+<linearGradient id="g-como-trabajamos" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-como-trabajamos" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-como-trabajamos)"/></mask></defs>
+<g mask="url(#m-como-trabajamos)" class="via"><use href="#r-como-trabajamos" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-como-trabajamos" class="v-borde"/><use href="#r-como-trabajamos" class="v-firme" transform="translate(0 -1.6)"/></g>
+<g><animateMotion dur="6s" keyPoints="0.2;0.37" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-como-trabajamos"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="6s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="6s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6s" keyPoints="0.225;0.395" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-como-trabajamos"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur="1s" repeatDur="6s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#3A3936" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur="1s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur="1s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#3A3936"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur="1s" repeatDur="6s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#3A3936" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6s" keyPoints="0.25;0.42" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-como-trabajamos"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".9s" repeatDur="6s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".9s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#958D82" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".9s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#A8A095" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".9s" repeatDur="6s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6s" keyPoints="0.275;0.445" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-como-trabajamos"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur="1.02s" repeatDur="6s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#4A4844" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur="1.02s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur="1.02s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#4A4844"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur="1.02s" repeatDur="6s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#4A4844" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6s" keyPoints="0.315;0.485" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-como-trabajamos"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="6s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#000" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#87857E" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#111" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#9C9A92" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#111" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#000"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+<path d="M1.5 -27 V-77" stroke="#3A3936" stroke-width="2" stroke-linecap="round"/><path fill="#FFEC00" d="M1.5 -77 C10.5 -80 18.5 -74 29.5 -77 L29.5 -63 C18.5 -60 10.5 -66 1.5 -63 Z"><animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M1.5 -77 C10.5 -80 18.5 -74 29.5 -77 L29.5 -63 C18.5 -60 10.5 -66 1.5 -63 Z;M1.5 -77 C10.5 -74 18.5 -80 29.5 -76 L29.5 -62 C18.5 -66 10.5 -60 1.5 -63 Z;M1.5 -77 C10.5 -80 18.5 -74 29.5 -77 L29.5 -63 C18.5 -60 10.5 -66 1.5 -63 Z"/></path>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="6s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#000" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<g><animateMotion dur="6s" keyPoints="0.62;0.96" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-como-trabajamos"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
   <div class="wrap stack">
     <span class="eyebrow">06 — Cómo trabajamos contigo</span>
     <h2 class="h-quote" data-reveal style="max-width:24ch">«Tengo distintos profesionales y proveedores de marketing, pero nadie coordina todo hacia un mismo objetivo».</h2>
@@ -332,7 +528,29 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="experiencia" class="sec" style="background:#fff">
+<section id="experiencia" class="sec con-tramo" style="background:#fff">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><linearGradient id="mf" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="mm" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="220"><rect width="1440" height="220" fill="url(#mf)"/></mask></defs><g mask="url(#mm)"><path d="M300 222 L520 104 L600 136 L700 70 L840 128 L980 82 L1180 222 Z" fill="#F4F1EC"/>
+<path d="M360 222 L560 120 L640 146 L768 46 L1100 222 Z" fill="#EAE4DC"/>
+<path d="M768 46 L1100 222 H900 L790 120 Z" fill="#E1D9CF"/></g><defs><path id="r-experiencia" d="M-40 210 C200 210 420 208 560 192 C700 176 600 154 720 140 C820 128 700 108 760 90 C790 80 772 62 762 50" pathLength="1"/>
+<linearGradient id="g-experiencia" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-experiencia" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-experiencia)"/></mask></defs>
+<g mask="url(#m-experiencia)" class="via fina"><use href="#r-experiencia" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-experiencia" class="v-borde"/><use href="#r-experiencia" class="v-firme" transform="translate(0 -1.6)"/></g>
+<ellipse cx="470" cy="204" rx="14" ry="3" fill="#000" opacity=".08"/><path d="M470 204 V180" stroke="#8C8378" stroke-width="3" stroke-linecap="round"/>
+<rect x="448" y="166" width="44" height="18" rx="3" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2"/><text class="tx-m" x="470" y="179" text-anchor="middle">1997</text>
+<path d="M768 46 V10" stroke="#3A3936" stroke-width="2" stroke-linecap="round"/><path fill="#FFEC00" d="M768 10 C777 7 785 13 796 10 L796 24 C785 27 777 21 768 24 Z"><animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M768 10 C777 7 785 13 796 10 L796 24 C785 27 777 21 768 24 Z;M768 10 C777 13 785 7 796 11 L796 25 C785 21 777 27 768 24 Z;M768 10 C777 7 785 13 796 10 L796 24 C785 27 777 21 768 24 Z"/></path>
+<text class="tx" x="806" y="30" text-anchor="start">Hoy</text>
+<g transform="translate(838 40)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g>
+<g><animateMotion dur="8s" keyPoints="0.26;0.82" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-experiencia"/></animateMotion><g transform="scale(0.72)"><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="8s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="8s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="8s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="8s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g></svg></div>
   <div class="wrap stack">
     <span class="eyebrow">07 — Experiencia y confianza</span>
     <h2 class="h-quote" data-reveal style="max-width:24ch">«Todas las agencias dicen que son expertas. ¿Cómo sé cuál puede ayudarme de verdad?».</h2>
@@ -351,7 +569,36 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="quien" class="sec" style="background:var(--piedra)">
+<section id="quien" class="sec con-tramo" style="background:var(--piedra)">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-quien" d="M-40 164 C260 164 420 144 600 144 C820 144 900 114 1100 114 C1260 114 1360 124 1480 124" pathLength="1"/>
+<linearGradient id="g-quien" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-quien" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-quien)"/></mask></defs>
+<g mask="url(#m-quien)" class="via"><use href="#r-quien" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-quien" class="v-borde"/><use href="#r-quien" class="v-firme" transform="translate(0 -1.6)"/></g>
+<g transform="translate(566 145) scale(1)"><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><path d="M0 -24 L0 -2.2" stroke="#CBBFAE" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#2F2D2B"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><path d="M.6 -42 L1.4 -27.4" stroke="#2F2D2B" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g>
+<g transform="translate(626 144) scale(1)"><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><path d="M-.5 -42 L-1 -27" stroke="#000" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><path d="M0 -24 L0 -2.2" stroke="#87857E" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#111" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><path d="M0 -24 L0 -2.2" stroke="#9C9A92" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#111" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#000"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-6 0 -42;0 0 -42" dur="3s" repeatCount="indefinite"/><path d="M.6 -42 L13 -52" stroke="#000" stroke-width="3.6" stroke-linecap="round"/><circle cx="14" cy="-53" r="1.8" fill="#D6B496"/></g>
+
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g>
+<path id="t-quien" class="pista traza" d="M646 92 C760 52 900 54 1086 96"/>
+<g><animateMotion dur="4.5s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".45 0 .4 1"><mpath href="#t-quien"/></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.85;1" dur="4.5s" repeatCount="indefinite"/><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></svg></div>
   <div class="wrap who">
     <div class="ph" data-reveal>
       <figure><img src="assets/alejandro-delgado.jpg" width="900" height="846" alt="Alejandro Delgado, fundador y director de Delgado, en una reunión de trabajo" loading="lazy"></figure>
@@ -442,7 +689,30 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="contacto" class="contact">
+<section id="contacto" class="contact con-tramo">
+<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><clipPath id="cielo"><rect x="0" y="0" width="1440" height="112"/></clipPath></defs>
+<g clip-path="url(#cielo)">
+  <g><animateTransform attributeName="transform" type="translate" from="0 70" to="0 0" dur="3.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/>
+    <g stroke="#FFEC00" stroke-width="1.6" stroke-linecap="round" opacity=".55"><animateTransform attributeName="transform" type="rotate" from="0 900 112" to="360 900 112" dur="80s" repeatCount="indefinite"/>
+      <path d="M900 40 V26 M900 198 V184 M828 112 H814 M986 112 H972 M849 61 L839 51 M951 163 L961 173 M951 61 L961 51 M849 163 L839 173"/></g>
+    <circle cx="900" cy="112" r="54" fill="#FFEC00"/>
+  </g>
+</g>
+<path d="M0 112 H1440" stroke="#3A3936" stroke-width="1"/><defs><path id="r-contacto" d="M-40 214 C300 212 560 162 740 138 C790 131 820 126 846 122" pathLength="1"/>
+<linearGradient id="g-contacto" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<mask id="m-contacto" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-contacto)"/></mask></defs>
+<g mask="url(#m-contacto)" class="via"><use href="#r-contacto" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-contacto" class="v-borde"/><use href="#r-contacto" class="v-firme" transform="translate(0 -1.6)"/></g>
+<g><animateMotion dur="6s" keyPoints="0.35;0.66" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-contacto"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="6s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#4A4844" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#77746E" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#222" stroke-width="2.8" stroke-linecap="round"/></g>
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;20 0 -24;0 0 -24;-20 0 -24;0 0 -24" dur=".95s" repeatDur="6s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#9C9A92" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#222" stroke-width="2.8" stroke-linecap="round"/></g>
+<path d="M-5.2 -44.4 C-6.6 -37 -6.4 -30 -5.8 -22.6 L5.8 -22.6 C6.3 -30 6.4 -38 4.8 -44.4 Q0 -46.4 -5.2 -44.4 Z" fill="#4A4844" stroke="#77746E" stroke-width=".9"/>
+<path d="M2.4 -44.6 L4.1 -41.4" stroke="#F6F5F0" stroke-width="1.1" stroke-linecap="round"/>
+
+<g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;-14 0 -42;0 0 -42;14 0 -42;0 0 -42" dur=".95s" repeatDur="6s" fill="remove"/><path d="M.6 -42 L1.4 -27.4" stroke="#4A4844" stroke-width="3.6" stroke-linecap="round"/><circle cx="1.5" cy="-26.2" r="1.7" fill="#D6B496"/></g>
+<rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
+<circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
+<path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g></svg></div>
   <div class="wrap" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);padding-top:var(--sec);padding-bottom:clamp(56px,6vw,88px)">
     <div style="display:flex;flex-direction:column;gap:28px">
       <span class="eyebrow">08 — Contacto</span>
@@ -548,6 +818,29 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
       aviso('err', 'No se pudo enviar', 'Escríbenos a ale@delgado.media o llámanos al 655 053 911.');
     }).then(function () { btn.disabled = false; });
   });
+})();
+</script>
+
+<script>
+(function () {
+  var tramos = document.querySelectorAll('.tramo');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  tramos.forEach(function (t) {
+    var s = t.querySelector('svg');
+    if (!s.pauseAnimations) { t.classList.add('on'); return; }
+    s.pauseAnimations(); s.setCurrentTime(0);
+    if (reduce) { t.classList.add('on'); s.setCurrentTime(9); return; }
+  });
+  if (reduce) return;
+  if (!('IntersectionObserver' in window)) { tramos.forEach(function (t) { t.classList.add('on'); var s = t.querySelector('svg'); s.unpauseAnimations && s.unpauseAnimations(); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var s = e.target.querySelector('svg');
+      if (e.isIntersecting) { e.target.classList.add('on'); s.unpauseAnimations && s.unpauseAnimations(); }
+      else if (e.target.classList.contains('on')) { s.pauseAnimations && s.pauseAnimations(); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: .25 });
+  tramos.forEach(function (t) { io.observe(t); });
 })();
 </script>
 </body>
