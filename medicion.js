@@ -1,4 +1,4 @@
-/* Medición de la captación comercial (D-141).
+/* Medición de la captación comercial (D-142).
    Cada enlace a la agenda de citas lleva data-cta="<texto o id>" y, opcionalmente,
    data-posicion="cabecera|portada|cuerpo|cierre". Al hacer clic se envía a GA4 el evento
    «clic_calendario» con la página, el CTA y la posición. Solo si hay consentimiento
