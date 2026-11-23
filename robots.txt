@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /INGEDOP/
-Disallow: /ingedop/
 
 Sitemap: https://www.delgado.media/sitemap.xml
