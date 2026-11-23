@@ -190,7 +190,7 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 
 /* Tramos del camino (dibujos animados) */
 .tramo{width:100%;overflow:hidden;--road:#ECE6DE;--edge:#DDD5CB}
-.tramo svg{display:block;width:100%;height:clamp(190px,22vw,330px)}
+.tramo svg{display:block;width:100%;height:clamp(180px,19vw,290px)}
 .tramo .via use{fill:none;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.3,.6,.2,1)}
 .tramo.on .via use{stroke-dashoffset:0}
 .tramo .v-sombra{stroke:#000;stroke-opacity:.07;stroke-width:28}
@@ -208,8 +208,10 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 #diferencial .tramo,#quien .tramo{--road:#E2DBD2;--edge:#D3CABF}
 #contacto .tramo{--road:#242422;--edge:#181817}
 #contacto .tramo .v-sombra{stroke-opacity:0}
-.sec.con-tramo{padding-top:clamp(8px,1.5vw,24px)}
-.contact.con-tramo > .wrap{padding-top:clamp(16px,3vw,40px)!important}
+.stack > .tramo,.contact .tramo{margin:clamp(-12px,-1vw,0px) 0}
+#quien > .tramo{margin-top:clamp(24px,4vw,56px)}
+#quien.sec{padding-bottom:clamp(24px,3vw,48px)}
+#contacto .tramo svg > path:first-of-type{opacity:.6}
 
 /* Pie */
 .foot{background:#000;color:var(--ink-300);border-top:1px solid var(--ink-800)}
@@ -288,9 +290,12 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="problema" class="sec con-tramo">
-<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-problema" d="M-40 178 C300 178 430 150 610 150 C780 150 830 122 1000 122 C1160 122 1260 100 1480 100" pathLength="1"/>
-<linearGradient id="g-problema" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<section id="problema" class="sec">
+  <div class="wrap stack">
+    <span class="eyebrow">02 — El problema</span>
+    <h2 class="h-quote" data-reveal style="max-width:20ch">«Hago marketing, invierto dinero, pero no sé qué me está dando resultados».</h2>
+    <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-problema" d="M-40 178 C300 178 430 150 610 150 C780 150 830 122 1000 122 C1160 122 1260 100 1480 100" pathLength="1"/>
+<linearGradient id="g-problema" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-problema" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-problema)"/></mask></defs>
 <g mask="url(#m-problema)" class="via"><use href="#r-problema" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-problema" class="v-borde"/><use href="#r-problema" class="v-firme" transform="translate(0 -1.6)"/></g>
 <path class="pista" d="M650 148 C620 120 580 98 512 86"/><path class="pista" d="M770 140 C810 112 860 92 920 66"/><path class="pista" d="M560 156 C520 150 470 138 426 110"/>
@@ -312,9 +317,6 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
 <path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
 <g><animateMotion dur="7s" keyPoints="0.6;0.96" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-problema"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="7s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
-  <div class="wrap stack">
-    <span class="eyebrow">02 — El problema</span>
-    <h2 class="h-quote" data-reveal style="max-width:20ch">«Hago marketing, invierto dinero, pero no sé qué me está dando resultados».</h2>
     <div class="split" data-reveal>
       <p class="lead">Hacer marketing no significa tener una estrategia.</p>
       <div class="body"><p>Publicidad, redes, SEO, páginas web… Muchas acciones que no siempre trabajan hacia el mismo objetivo.</p></div>
@@ -323,9 +325,12 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="metodo" class="sec con-tramo" style="background:#fff">
-<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-metodo" d="M-40 124 C260 124 380 164 620 164 C860 164 960 114 1180 114 C1300 114 1380 132 1480 132" pathLength="1"/>
-<linearGradient id="g-metodo" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<section id="metodo" class="sec" style="background:#fff">
+  <div class="wrap stack">
+    <span class="eyebrow">03 — Nuestro método</span>
+    <h2 class="h-quote" data-reveal style="max-width:22ch">«Lo que comunica mi empresa no refleja todo lo que hay detrás de lo que hemos construido».</h2>
+    <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-metodo" d="M-40 124 C260 124 380 164 620 164 C860 164 960 114 1180 114 C1300 114 1380 132 1480 132" pathLength="1"/>
+<linearGradient id="g-metodo" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-metodo" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-metodo)"/></mask></defs>
 <g mask="url(#m-metodo)" class="via"><use href="#r-metodo" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-metodo" class="v-borde"/><use href="#r-metodo" class="v-firme" transform="translate(0 -1.6)"/></g>
 <ellipse cx="862" cy="130" rx="62" ry="4" fill="#000" opacity=".08"/>
@@ -339,9 +344,10 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   <circle cx="856" cy="94" r="38" fill="url(#vidrio)" stroke="#141413" stroke-width="3.4"/>
   <path d="M832 80 A28 28 0 0 1 852 66" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8"/>
 </g>
-<g class="chips"><g><rect x="960" y="56" width="54" height="8" rx="4" fill="#E6DFD5"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.2;.8;1" dur="7s" repeatCount="indefinite"/></g>
-<g><rect x="960" y="72" width="38" height="8" rx="4" fill="#FFEC00"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.2;.35;.85;1" dur="7s" repeatCount="indefinite"/></g>
-<g><rect x="960" y="88" width="46" height="8" rx="4" fill="#E6DFD5"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.35;.5;.9;1" dur="7s" repeatCount="indefinite"/></g></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.05;0.15;.92;1" dur="7s" repeatCount="indefinite"/><rect x="950" y="40" width="84" height="22" rx="11" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2"/><circle cx="962" cy="51" r="3" fill="#FFEC00"/><text class="tx-s" x="971" y="55">Negocio</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2;0.3;.92;1" dur="7s" repeatCount="indefinite"/><rect x="950" y="68" width="92" height="22" rx="11" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2"/><circle cx="962" cy="79" r="3" fill="#FFEC00"/><text class="tx-s" x="971" y="83">Productos</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.35;0.45;.92;1" dur="7s" repeatCount="indefinite"/><rect x="950" y="96" width="84" height="22" rx="11" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2"/><circle cx="962" cy="107" r="3" fill="#FFEC00"/><text class="tx-s" x="971" y="111">Mercado</text></g>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.6;.92;1" dur="7s" repeatCount="indefinite"/><rect x="950" y="124" width="84" height="22" rx="11" fill="#FFFFFF" stroke="#CFCDC4" stroke-width="1.2"/><circle cx="962" cy="135" r="3" fill="#FFEC00"/><text class="tx-s" x="971" y="139">Clientes</text></g>
 <g><animateMotion dur="4s" keyPoints="0.25;0.39" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-metodo"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
 <g><animateTransform attributeName="transform" type="rotate" values="0 0 -42;14 0 -42;0 0 -42;-14 0 -42;0 0 -42" dur=".95s" repeatDur="4s" fill="remove"/><path d="M-.5 -42 L-1 -27" stroke="#2F2D2B" stroke-width="3.4" stroke-linecap="round" opacity=".8"/></g>
 <g><animateTransform attributeName="transform" type="rotate" values="0 0 -24;-20 0 -24;0 0 -24;20 0 -24;0 0 -24" dur=".95s" repeatDur="4s" fill="remove"/><path d="M0 -24 L0 -2.2" stroke="#B5A893" stroke-width="4.4" stroke-linecap="round"/><path d="M-1.2 -.8 h5.6" stroke="#4A3424" stroke-width="2.8" stroke-linecap="round"/></g>
@@ -354,9 +360,6 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
 <path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
 <g><animateMotion dur="6.5s" keyPoints="0.66;0.96" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-metodo"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6.5s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
-  <div class="wrap stack">
-    <span class="eyebrow">03 — Nuestro método</span>
-    <h2 class="h-quote" data-reveal style="max-width:22ch">«Lo que comunica mi empresa no refleja todo lo que hay detrás de lo que hemos construido».</h2>
     <div class="split" data-reveal>
       <p class="lead">Antes de comunicar, necesitamos <mark class="hl">descubrir qué te hace diferente.</mark></p>
       <div class="body">
@@ -368,9 +371,12 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="implementacion" class="sec con-tramo">
-<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-implementacion" d="M-40 166 C300 166 380 134 520 134 C620 134 640 154 720 154 C800 154 820 124 920 124 C1080 124 1200 144 1480 144" pathLength="1"/>
-<linearGradient id="g-implementacion" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<section id="implementacion" class="sec">
+  <div class="wrap stack">
+    <span class="eyebrow">04 — Cómo lo ponemos en marcha</span>
+    <h2 class="h-quote" data-reveal style="max-width:24ch">«He contratado agencias, he invertido dinero y sigo sin saber qué resultados concretos estoy consiguiendo».</h2>
+    <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-implementacion" d="M-40 166 C300 166 380 134 520 134 C620 134 640 154 720 154 C800 154 820 124 920 124 C1080 124 1200 144 1480 144" pathLength="1"/>
+<linearGradient id="g-implementacion" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-implementacion" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-implementacion)"/></mask></defs>
 <g mask="url(#m-implementacion)" class="via"><use href="#r-implementacion" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-implementacion" class="v-borde"/><use href="#r-implementacion" class="v-firme" transform="translate(0 -1.6)"/></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.4s" dur=".8s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="0.4s" dur=".8s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/><ellipse cx="540" cy="120" rx="20" ry="3" fill="#000" opacity=".08"/><path d="M525 120 V94 Q525 80 540 80 Q555 80 555 94 V120 Z" fill="#FBFAF7" stroke="#CFCDC4" stroke-width="1.2"/><path d="M546 81.5 Q555 84 555 94 V120 H546 Z" fill="#ECE6DE"/><text class="tx-m" x="540" y="106" text-anchor="middle">01</text><text class="tx" x="540" y="70" text-anchor="middle">Preparamos</text></g>
@@ -389,9 +395,6 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
 <path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
 <g><animateMotion dur="6s" keyPoints="0.7;0.97" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-implementacion"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
-  <div class="wrap stack">
-    <span class="eyebrow">04 — Cómo lo ponemos en marcha</span>
-    <h2 class="h-quote" data-reveal style="max-width:24ch">«He contratado agencias, he invertido dinero y sigo sin saber qué resultados concretos estoy consiguiendo».</h2>
     <div class="split" data-reveal>
       <p class="lead">Una estrategia solo tiene valor cuando se ejecuta.</p>
       <div class="body"><p>Nuestro método organiza el trabajo en tres etapas.</p></div>
@@ -405,9 +408,12 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="diferencial" class="sec con-tramo" style="background:var(--piedra)">
-<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-diferencial" d="M-40 132 C240 132 380 164 560 164 C740 164 800 132 960 132 C1140 132 1240 152 1480 152" pathLength="1"/>
-<linearGradient id="g-diferencial" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<section id="diferencial" class="sec" style="background:var(--piedra)">
+  <div class="wrap stack">
+    <span class="eyebrow">05 — Nuestro diferencial</span>
+    <h2 class="h-quote" data-reveal style="max-width:22ch">«Mi agencia solo me habla de anuncios, redes sociales y visitas a la web».</h2>
+    <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-diferencial" d="M-40 132 C240 132 380 164 560 164 C740 164 800 132 960 132 C1140 132 1240 152 1480 152" pathLength="1"/>
+<linearGradient id="g-diferencial" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-diferencial" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-diferencial)"/></mask></defs>
 <g mask="url(#m-diferencial)" class="via"><use href="#r-diferencial" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-diferencial" class="v-borde"/><use href="#r-diferencial" class="v-firme" transform="translate(0 -1.6)"/></g>
 <ellipse cx="560" cy="142" rx="46" ry="3" fill="#000" opacity=".08"/>
@@ -415,7 +421,7 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <rect x="531" y="97" width="58" height="36" rx="2" fill="#FBFAF7"/>
 <rect x="538" width="7" rx="1" fill="#CFCDC4" y="121" height="8"><animate attributeName="height" values="8;18;8" dur="2.4s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="121;111;121" dur="2.4s" begin="0s" repeatCount="indefinite"/></rect><rect x="549" width="7" rx="1" fill="#CFCDC4" y="115" height="14"><animate attributeName="height" values="14;8;14" dur="2.4s" begin="-0.6s" repeatCount="indefinite"/><animate attributeName="y" values="115;121;115" dur="2.4s" begin="-0.6s" repeatCount="indefinite"/></rect><rect x="560" width="7" rx="1" fill="#CFCDC4" y="119" height="10"><animate attributeName="height" values="10;22;10" dur="2.4s" begin="-1.2s" repeatCount="indefinite"/><animate attributeName="y" values="119;107;119" dur="2.4s" begin="-1.2s" repeatCount="indefinite"/></rect><rect x="571" width="7" rx="1" fill="#FFEC00" y="111" height="18"><animate attributeName="height" values="18;26;18" dur="2.4s" begin="-0.3s" repeatCount="indefinite"/><animate attributeName="y" values="111;103;111" dur="2.4s" begin="-0.3s" repeatCount="indefinite"/></rect>
 <path d="M514 138 H606 L600 145 H520 Z" fill="#3A3936"/>
-<text class="tx" x="560" y="80" text-anchor="middle">Digital</text>
+<text class="tx" x="560" y="80" text-anchor="middle">Campaña digital</text>
 <ellipse cx="810" cy="140" rx="64" ry="3" fill="#000" opacity=".08"/>
 <path d="M756 102 V140 M756 122 H770 V140" stroke="#8C8378" stroke-width="3" fill="none" stroke-linecap="round"/>
 <path d="M864 102 V140 M864 122 H850 V140" stroke="#8C8378" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -423,7 +429,7 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <path d="M782 116 V140 M838 116 V140" stroke="#9C8B74" stroke-width="3" stroke-linecap="round"/>
 <path d="M790 102 h11 v8 h-11 Z M819 102 h11 v8 h-11 Z" fill="#FFFFFF" stroke="#9C9A92" stroke-width="1"/>
 <path d="M795.5 100 q-3 -5 0 -9 q3 -4 0 -8" stroke="#B5B2AA" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;.9;0" dur="2.6s" begin="0s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 2;0 -6" dur="2.6s" begin="0s" repeatCount="indefinite"/></path><path d="M824.5 100 q-3 -5 0 -9 q3 -4 0 -8" stroke="#B5B2AA" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;.9;0" dur="2.6s" begin="-1.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 2;0 -6" dur="2.6s" begin="-1.3s" repeatCount="indefinite"/></path>
-<text class="tx" x="810" y="80" text-anchor="middle">Reuniones</text>
+<text class="tx" x="810" y="80" text-anchor="middle">Reunión personal</text>
 <ellipse cx="1028" cy="122" rx="30" ry="3" fill="#000" opacity=".08"/>
 <path d="M1006 92 L1048 76 V116 L1006 100 Z" fill="#FFFFFF" stroke="#3A3936" stroke-width="1.6" stroke-linejoin="round"/>
 <rect x="994" y="91" width="13" height="11" rx="2" fill="#3A3936"/><path d="M1000 102 L1004 116" stroke="#3A3936" stroke-width="3" stroke-linecap="round"/>
@@ -442,9 +448,6 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
 <path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
 <g><animateMotion dur="6s" keyPoints="0.7;0.97" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-diferencial"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
-  <div class="wrap stack">
-    <span class="eyebrow">05 — Nuestro diferencial</span>
-    <h2 class="h-quote" data-reveal style="max-width:22ch">«Mi agencia solo me habla de anuncios, redes sociales y visitas a la web».</h2>
     <div class="split" data-reveal>
       <p class="lead">Las oportunidades de negocio no están solamente en internet.</p>
       <div class="body">
@@ -456,9 +459,12 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="como-trabajamos" class="sec con-tramo">
-<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-como-trabajamos" d="M-40 154 C300 154 420 134 720 134 C1000 134 1100 164 1480 164" pathLength="1"/>
-<linearGradient id="g-como-trabajamos" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<section id="como-trabajamos" class="sec">
+  <div class="wrap stack">
+    <span class="eyebrow">06 — Cómo trabajamos contigo</span>
+    <h2 class="h-quote" data-reveal style="max-width:24ch">«Tengo distintos profesionales y proveedores de marketing, pero nadie coordina todo hacia un mismo objetivo».</h2>
+    <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-como-trabajamos" d="M-40 154 C300 154 420 134 720 134 C1000 134 1100 164 1480 164" pathLength="1"/>
+<linearGradient id="g-como-trabajamos" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-como-trabajamos" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-como-trabajamos)"/></mask></defs>
 <g mask="url(#m-como-trabajamos)" class="via"><use href="#r-como-trabajamos" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-como-trabajamos" class="v-borde"/><use href="#r-como-trabajamos" class="v-firme" transform="translate(0 -1.6)"/></g>
 <g><animateMotion dur="6s" keyPoints="0.2;0.37" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-como-trabajamos"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
@@ -516,10 +522,8 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
 <circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
 <path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g>
+<text class="tx" x="660" y="58" text-anchor="middle">Un único equipo</text>
 <g><animateMotion dur="6s" keyPoints="0.62;0.96" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1" repeatCount="indefinite"><mpath href="#r-como-trabajamos"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="6s" repeatCount="indefinite"/><g transform="translate(0 -18)"><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></g></svg></div>
-  <div class="wrap stack">
-    <span class="eyebrow">06 — Cómo trabajamos contigo</span>
-    <h2 class="h-quote" data-reveal style="max-width:24ch">«Tengo distintos profesionales y proveedores de marketing, pero nadie coordina todo hacia un mismo objetivo».</h2>
     <div class="split" data-reveal>
       <p class="lead">Un único equipo. Una estrategia. Un objetivo.</p>
       <div class="body"><p>Coordinamos y ejecutamos todas las acciones necesarias para hacer crecer tu empresa. Desde la planificación hasta la ejecución y la medición de resultados.</p></div>
@@ -528,11 +532,14 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="experiencia" class="sec con-tramo" style="background:#fff">
-<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><linearGradient id="mf" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="mm" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="220"><rect width="1440" height="220" fill="url(#mf)"/></mask></defs><g mask="url(#mm)"><path d="M300 222 L520 104 L600 136 L700 70 L840 128 L980 82 L1180 222 Z" fill="#F4F1EC"/>
+<section id="experiencia" class="sec" style="background:#fff">
+  <div class="wrap stack">
+    <span class="eyebrow">07 — Experiencia y confianza</span>
+    <h2 class="h-quote" data-reveal style="max-width:24ch">«Todas las agencias dicen que son expertas. ¿Cómo sé cuál puede ayudarme de verdad?».</h2>
+    <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><linearGradient id="mf" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="mm" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="220"><rect width="1440" height="220" fill="url(#mf)"/></mask></defs><g mask="url(#mm)"><path d="M300 222 L520 104 L600 136 L700 70 L840 128 L980 82 L1180 222 Z" fill="#F4F1EC"/>
 <path d="M360 222 L560 120 L640 146 L768 46 L1100 222 Z" fill="#EAE4DC"/>
 <path d="M768 46 L1100 222 H900 L790 120 Z" fill="#E1D9CF"/></g><defs><path id="r-experiencia" d="M-40 210 C200 210 420 208 560 192 C700 176 600 154 720 140 C820 128 700 108 760 90 C790 80 772 62 762 50" pathLength="1"/>
-<linearGradient id="g-experiencia" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="g-experiencia" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-experiencia" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-experiencia)"/></mask></defs>
 <g mask="url(#m-experiencia)" class="via fina"><use href="#r-experiencia" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-experiencia" class="v-borde"/><use href="#r-experiencia" class="v-firme" transform="translate(0 -1.6)"/></g>
 <ellipse cx="470" cy="204" rx="14" ry="3" fill="#000" opacity=".08"/><path d="M470 204 V180" stroke="#8C8378" stroke-width="3" stroke-linecap="round"/>
@@ -551,9 +558,6 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
 <circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
 <path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g></svg></div>
-  <div class="wrap stack">
-    <span class="eyebrow">07 — Experiencia y confianza</span>
-    <h2 class="h-quote" data-reveal style="max-width:24ch">«Todas las agencias dicen que son expertas. ¿Cómo sé cuál puede ayudarme de verdad?».</h2>
     <div class="split" data-reveal>
       <p class="lead">Nuestro método nació de 30 años de experiencia, no de una fórmula improvisada.</p>
       <div class="body">
@@ -569,9 +573,26 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="quien" class="sec con-tramo" style="background:var(--piedra)">
+<section id="quien" class="sec" style="background:var(--piedra)">
+  <div class="wrap who">
+    <div class="ph" data-reveal>
+      <figure><img src="assets/alejandro-delgado.jpg" width="900" height="846" alt="Alejandro Delgado, fundador y director de Delgado, en una reunión de trabajo" loading="lazy"></figure>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:20px;font-weight:500;letter-spacing:-.02em">Alejandro Delgado</span><span style="font-size:15px;color:var(--ink-700)">Fundador y director de Delgado</span></div>
+    </div>
+    <div class="tx">
+      <span class="eyebrow">Quién está detrás de Delgado</span>
+      <h2 data-reveal style="margin:0;font-weight:500;font-size:clamp(2rem,1.3rem + 2.6vw,4rem);line-height:1.05;letter-spacing:-.045em">30 años dedicados a entender cómo crecen las empresas.</h2>
+      <blockquote data-reveal>«Antes de proponer soluciones, hay que entender el negocio».</blockquote>
+      <div class="bio">
+        <p>Llevo 30 años trabajando en marketing, publicidad y medios de comunicación, acompañando a empresas de diferentes sectores.</p>
+        <p>Durante este tiempo he aprendido que el crecimiento no depende de hacer más marketing, sino de comprender el negocio, tomar buenas decisiones y conseguir que cada acción tenga un propósito.</p>
+        <p>Hoy, junto a mi equipo, ponemos esa experiencia al servicio de empresas que quieren crecer, combinando estrategia, ejecución y tecnología.</p>
+      </div>
+      <a class="link" href="https://www.linkedin.com/in/alejandrohugodelgado/" target="_blank" rel="noopener" style="align-self:flex-start">Conoce mi trayectoria en LinkedIn ↗</a>
+    </div>
+  </div>
 <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><path id="r-quien" d="M-40 164 C260 164 420 144 600 144 C820 144 900 114 1100 114 C1260 114 1360 124 1480 124" pathLength="1"/>
-<linearGradient id="g-quien" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="g-quien" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-quien" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-quien)"/></mask></defs>
 <g mask="url(#m-quien)" class="via"><use href="#r-quien" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-quien" class="v-borde"/><use href="#r-quien" class="v-firme" transform="translate(0 -1.6)"/></g>
 <g transform="translate(566 145) scale(1)"><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
@@ -599,23 +620,6 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <path id="t-quien" class="pista traza" d="M646 92 C760 52 900 54 1086 96"/>
 <g><animateMotion dur="4.5s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".45 0 .4 1"><mpath href="#t-quien"/></animateMotion>
 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.85;1" dur="4.5s" repeatCount="indefinite"/><circle r="15" fill="#FFEC00" opacity=".28"><animate attributeName="r" values="11;19;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;.12;.35" dur="2.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#FFEC00"/></g></svg></div>
-  <div class="wrap who">
-    <div class="ph" data-reveal>
-      <figure><img src="assets/alejandro-delgado.jpg" width="900" height="846" alt="Alejandro Delgado, fundador y director de Delgado, en una reunión de trabajo" loading="lazy"></figure>
-      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:20px;font-weight:500;letter-spacing:-.02em">Alejandro Delgado</span><span style="font-size:15px;color:var(--ink-700)">Fundador y director de Delgado</span></div>
-    </div>
-    <div class="tx">
-      <span class="eyebrow">Quién está detrás de Delgado</span>
-      <h2 data-reveal style="margin:0;font-weight:500;font-size:clamp(2rem,1.3rem + 2.6vw,4rem);line-height:1.05;letter-spacing:-.045em">30 años dedicados a entender cómo crecen las empresas.</h2>
-      <blockquote data-reveal>«Antes de proponer soluciones, hay que entender el negocio».</blockquote>
-      <div class="bio">
-        <p>Llevo 30 años trabajando en marketing, publicidad y medios de comunicación, acompañando a empresas de diferentes sectores.</p>
-        <p>Durante este tiempo he aprendido que el crecimiento no depende de hacer más marketing, sino de comprender el negocio, tomar buenas decisiones y conseguir que cada acción tenga un propósito.</p>
-        <p>Hoy, junto a mi equipo, ponemos esa experiencia al servicio de empresas que quieren crecer, combinando estrategia, ejecución y tecnología.</p>
-      </div>
-      <a class="link" href="https://www.linkedin.com/in/alejandrohugodelgado/" target="_blank" rel="noopener" style="align-self:flex-start">Conoce mi trayectoria en LinkedIn ↗</a>
-    </div>
-  </div>
 </section>
 
 <section class="sec" aria-labelledby="casos-t">
@@ -689,8 +693,17 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
-<section id="contacto" class="contact con-tramo">
-<div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><clipPath id="cielo"><rect x="0" y="0" width="1440" height="112"/></clipPath></defs>
+<section id="contacto" class="contact">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);padding-top:var(--sec);padding-bottom:clamp(56px,6vw,88px)">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span class="eyebrow">08 — Contacto</span>
+      <h2 data-reveal>¿Qué necesita cambiar en tu empresa para vender más?</h2>
+      <div class="intro" data-reveal>
+        <p>Cuéntanos qué está sucediendo y qué quieres conseguir.</p>
+        <p>Analizaremos tu situación para entender dónde podemos aportar valor y cómo podríamos ayudarte.</p>
+      </div>
+    </div>
+    <div class="tramo" aria-hidden="true"><svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" focusable="false"><defs><clipPath id="cielo"><rect x="0" y="0" width="1440" height="112"/></clipPath></defs>
 <g clip-path="url(#cielo)">
   <g><animateTransform attributeName="transform" type="translate" from="0 70" to="0 0" dur="3.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/>
     <g stroke="#FFEC00" stroke-width="1.6" stroke-linecap="round" opacity=".55"><animateTransform attributeName="transform" type="rotate" from="0 900 112" to="360 900 112" dur="80s" repeatCount="indefinite"/>
@@ -699,7 +712,7 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
   </g>
 </g>
 <path d="M0 112 H1440" stroke="#3A3936" stroke-width="1"/><defs><path id="r-contacto" d="M-40 214 C300 212 560 162 740 138 C790 131 820 126 846 122" pathLength="1"/>
-<linearGradient id="g-contacto" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".16" stop-color="#fff"/><stop offset=".84" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="g-contacto" x1="0" x2="1"><stop offset=".13" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset=".87" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="m-contacto" maskUnits="userSpaceOnUse" x="-50" y="-50" width="1540" height="320"><rect x="-50" y="-50" width="1540" height="320" fill="url(#g-contacto)"/></mask></defs>
 <g mask="url(#m-contacto)" class="via"><use href="#r-contacto" class="v-sombra" filter="url(#suave)" transform="translate(0 8)"/><use href="#r-contacto" class="v-borde"/><use href="#r-contacto" class="v-firme" transform="translate(0 -1.6)"/></g>
 <g><animateMotion dur="6s" keyPoints="0.35;0.66" keyTimes="0;1" calcMode="spline" keySplines=".35 0 .45 1" fill="freeze"><mpath href="#r-contacto"/></animateMotion><g><ellipse cx="0" cy="1" rx="10" ry="2.2" fill="#000" opacity=".13"/>
@@ -713,15 +726,6 @@ summary{list-style:none}summary::-webkit-details-marker{display:none}
 <rect x="-1.4" y="-47.6" width="3.2" height="3.6" fill="#D6B496"/>
 <circle cx=".9" cy="-51" r="5.1" fill="#D6B496"/>
 <path d="M-4.4 -51.6 A5.2 5.2 0 0 1 5.7 -53 Q2.4 -55.2 -.6 -53.2 Q-2.6 -50.4 -3.6 -47.6 Q-4.8 -49 -4.4 -51.6 Z" fill="#2A2522"/></g></g></svg></div>
-  <div class="wrap" style="display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);padding-top:var(--sec);padding-bottom:clamp(56px,6vw,88px)">
-    <div style="display:flex;flex-direction:column;gap:28px">
-      <span class="eyebrow">08 — Contacto</span>
-      <h2 data-reveal>¿Qué necesita cambiar en tu empresa para vender más?</h2>
-      <div class="intro" data-reveal>
-        <p>Cuéntanos qué está sucediendo y qué quieres conseguir.</p>
-        <p>Analizaremos tu situación para entender dónde podemos aportar valor y cómo podríamos ayudarte.</p>
-      </div>
-    </div>
     <div class="grid">
       <form class="form" id="form-contacto" novalidate>
         <div class="two">
