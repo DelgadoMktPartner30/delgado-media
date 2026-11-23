@@ -1,35 +1,27 @@
-# Publica los cambios del SEO semanal (D-121). La sesión de Claude en la nube deja sus cambios en
-# la rama seo-semanal; este flujo los une a main (GitHub Pages publica main) y pide la publicación.
-name: Publicar SEO semanal
+# SEO semanal con aprobación de Alejandro (D-121, D-141). La sesión de Claude en la nube deja sus
+# cambios en la rama seo-semanal. Desde el 23/11/2026 este flujo YA NO los publica: solo comprueba
+# los límites. Publicar = que Alejandro abra un pull request seo-semanal → main y lo fusione
+# (https://github.com/DelgadoMktPartner30/delgado-media/compare/main...seo-semanal); GitHub Pages
+# publica main. Cada ciclo sustituye la rama: lo no aprobado se reemplaza por la propuesta nueva.
+name: SEO semanal (pendiente de aprobación)
 on:
   push:
     branches: [seo-semanal]
 permissions:
-  contents: write
-  pages: write
-concurrency:
-  group: publicar
-  cancel-in-progress: false
+  contents: read
 jobs:
-  publicar:
+  comprobar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: seo-semanal
           fetch-depth: 0
-      - name: Unir seo-semanal a main
+      - name: Comprobar límites (no publica)
         run: |
-          git config user.name "SEO nube"
-          git config user.email "seo-nube@delgado.media"
-          git fetch -q origin seo-semanal
-          n=$(git diff --name-only HEAD origin/seo-semanal | wc -l)
-          echo "$n archivos cambian"
+          git fetch -q origin main
+          n=$(git diff --name-only origin/main HEAD | wc -l)
+          echo "$n archivos cambian respecto a main"
           [ "$n" -le 10 ] || { echo "ABORTADO: demasiados archivos ($n)"; exit 1; }
-          git merge --no-edit origin/seo-semanal
           [ "$(cat CNAME)" = "www.delgado.media" ] || { echo "ABORTADO: CNAME alterado"; exit 1; }
-          git push -q origin HEAD:main
-      - name: Pedir la publicación a GitHub Pages
-        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null && echo "Publicación pedida."
-        env:
-          GH_TOKEN: ${{ github.token }}
+          echo "Pendiente de aprobación: https://github.com/${{ github.repository }}/compare/main...seo-semanal"
